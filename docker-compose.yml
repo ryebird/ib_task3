@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  linux-trainer:
+    build: .
+    container_name: linux-training-container
+    ports:
+      - "7681:7681"
+    environment:
+      - TERM=xterm-256color
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
